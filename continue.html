@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakika Loans - Continue Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+        <div class="w-full max-w-5xl flex flex-col lg:flex-row lg:items-start lg:space-x-8">
+            <!-- Left Side: Requirements & Tips -->
+            <div class="lg:sticky lg:top-8 w-full lg:w-1/3 mb-6 lg:mb-0">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center justify-center mb-6">
+                        <h2 class="text-2xl md:text-3xl font-bold text-blue-600">Application Tips</h2>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-1 gap-6">
+                        <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg transition-transform hover:scale-105">
+                            <i class="fas fa-info-circle text-blue-500 text-xl"></i>
+                            <span class="text-sm md:text-base text-gray-700 font-medium">Provide accurate income details</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg transition-transform hover:scale-105">
+                            <i class="fas fa-shield-alt text-blue-500 text-xl"></i>
+                            <span class="text-sm md:text-base text-gray-700 font-medium">Your data is secure</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg transition-transform hover:scale-105">
+                            <i class="fas fa-clock text-blue-500 text-xl"></i>
+                            <span class="text-sm md:text-base text-gray-700 font-medium">Quick processing time</span>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-blue-50 p-4 rounded-lg transition-transform hover:scale-105">
+                            <i class="fas fa-phone-alt text-blue-500 text-xl"></i>
+                            <span class="text-sm md:text-base text-gray-700 font-medium">24/7 Support available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Application Form -->
+            <div class="w-full lg:w-2/3">
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                    <div class="text-center mb-8">
+                        <h1 class="text-3xl md:text-4xl font-bold text-blue-600 mb-2">Complete Your Application</h1>
+                        <p class="text-gray-600 md:text-lg">Final steps to process your loan</p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-medium text-blue-600">Step 2 of 2</span>
+                            <span class="text-sm text-gray-500">Additional Information</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full w-full transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    <form action="apply.php" method="POST" class="space-y-6" id="continueForm">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Education Level -->
+                            <div class="form-group md:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-graduation-cap text-blue-500 mr-2"></i>Level of Education
+                                </label>
+                                <select name="education_level" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm bg-white">
+                                    <option value="">Select Education Level</option>
+                                    <option value="primary">Primary</option>
+                                    <option value="secondary">Secondary</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="degree">Bachelor's Degree</option>
+                                    <option value="masters">Master's Degree</option>
+                                    <option value="phd">PhD</option>
+                                </select>
+                            </div>
+
+                            <!-- Employment Status -->
+                            <div class="form-group">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-briefcase text-blue-500 mr-2"></i>Employment Status
+                                </label>
+                                <select name="employment" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm bg-white">
+                                    <option value="">Select Employment Status</option>
+                                    <option value="employed">Employed</option>
+                                    <option value="self-employed">Self-Employed</option>
+                                    <option value="business">Business Owner</option>
+                                    <option value="unemployed">Unemployed</option>
+                                </select>
+                            </div>
+
+                            <!-- Monthly Income -->
+                            <div class="form-group">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-money-bill-wave text-blue-500 mr-2"></i>Monthly Income (KES)
+                                </label>
+                                <select name="monthly_income" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm bg-white">
+                                    <option value="">Select Income Range</option>
+                                    <option value="0-30000">0 - 30,000</option>
+                                    <option value="30001-50000">30,001 - 50,000</option>
+                                    <option value="50001-100000">50,001 - 100,000</option>
+                                    <option value="100001-above">Above 100,000</option>
+                                </select>
+                            </div>
+
+                            <!-- Loan Purpose -->
+                            <div class="form-group md:col-span-2">
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <i class="fas fa-tasks text-blue-500 mr-2"></i>Loan Purpose
+                                </label>
+                                <select name="loan_purpose" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm bg-white">
+                                    <option value="">Select Loan Purpose</option>
+                                    <option value="business">Business</option>
+                                    <option value="education">Education</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="emergency">Emergency</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Referee Section -->
+                            <div class="form-group md:col-span-2">
+                                <h2 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-user-friends text-blue-500 mr-2"></i>Referee Information
+                                </h2>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="form-group md:col-span-2">
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Referee Full Names</label>
+                                        <input type="text" name="referee_names" required
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm"
+                                            placeholder="Enter referee's full names">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Referee Phone Number</label>
+                                        <input type="tel" name="referee_phone" pattern="07[0-9]{8}" required
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm"
+                                            placeholder="07XXXXXXXX">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Relationship</label>
+                                        <select name="referee_relationship" required
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out shadow-sm bg-white">
+                                            <option value="">Select Relationship</option>
+                                            <option value="family">Family Member</option>
+                                            <option value="friend">Friend</option>
+                                            <option value="colleague">Colleague</option>
+                                            <option value="employer">Employer</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" onclick="submitForm()"
+                            class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out transform hover:-translate-y-0.5 flex items-center justify-center space-x-2 text-lg font-medium">
+                            <span>Submit Application</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Footer -->
+                <div class="mt-6 text-center text-sm text-gray-600">
+                    <p>Need help? Contact support: support@hakikaloans.site</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('continueForm');
+            if (form.checkValidity()) {
+                // Add loading state to button
+                const button = form.querySelector('button');
+                button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Processing...';
+                button.disabled = true;
+
+                // Combine data from both forms
+                const formData = new FormData(form);
+                for (let [key, value] of formData.entries()) {
+                    sessionStorage.setItem(key, value);
+                }
+                
+                // Create a new form to submit all data
+                const finalForm = document.createElement('form');
+                finalForm.method = 'POST';
+                finalForm.action = 'apply.php';
+                
+                // Add all stored data to the form
+                for (let i = 0; i < sessionStorage.length; i++) {
+                    const key = sessionStorage.key(i);
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = sessionStorage.getItem(key);
+                    finalForm.appendChild(input);
+                }
+                
+                document.body.appendChild(finalForm);
+                finalForm.submit();
+            } else {
+                form.reportValidity();
+            }
+        }
+
+        // Add input validation for referee phone number
+        document.querySelector('input[name="referee_phone"]').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) value = value.slice(0, 10);
+            if (value.length >= 2 && value.slice(0, 2) !== '07') value = '07' + value.slice(2);
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>
